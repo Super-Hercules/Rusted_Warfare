@@ -1,0 +1,34 @@
+[core]
+dont_load: true
+
+@memory 状态:text
+[hiddenAction_仿生装甲回血]
+pos: 0.1
+autoTrigger: if self.globalTeamTags(includes='仿生装甲') and not self.hasFlag(id=1)
+addResources: setFlag=1
+setUnitMemory: 状态 = "仿生装甲"
+setUnitStats: selfRegenRate = self.maxHp/13200
+
+[hiddenAction_仿生装甲应激]
+pos: 0.2
+autoTrigger: if self.globalTeamTags(includes='仿生装甲') and self.hp <= self.maxHp*0.3 and not self.hasFlag(id=2)
+setUnitStats: selfRegenRate = ${core.selfRegenRate}*3, shootDamageMultiplier = 1.1
+alsoQueueAction: 仿生装甲结束
+alsoTriggerOrQueueActionConditional: if self.customTimer(laterThanSeconds=5)
+resetCustomTimer: true
+
+[hiddenAction_仿生装甲结束]
+pos: 0.3
+addResources: setFlag=2
+resetUnitStats: true
+setUnitMemory: 状态 = "装甲破碎"
+setUnitStats: maxHp = self.maxHp/2
+
+[action_仿生装甲显示]
+isVisible: if self.globalTeamTags(includes='仿生装甲')
+pos: 999
+buildSpeed: 0
+text: [%{memory.状态}]
+description: - 仿生装甲科技\n- 单位正常状态下提供基于最大生命值的回血能力\n- 单位生命值低于30%时进入应激模式，回血变为正常状态下的3倍，攻击造成1.1倍伤害，持续5秒\n- 单位应激模式后失去加成，最大生命值减半
+isActive: false
+displayType: infoOnlyNoBox

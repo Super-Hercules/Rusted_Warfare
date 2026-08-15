@@ -1,0 +1,39 @@
+[core]
+dont_load: true
+
+[action_养分回收I]
+autoTriggerOnEvent:destroyed
+text:养分回收I
+description:死亡时回收${int(core.price*0.15)}资金
+isAlsoViewableByAllies:true
+isAlsoViewableByEnemies:true
+pos:999
+isActive:false
+displayType:infoOnlyNoBox
+addResources:${int(core.price*0.15)}
+requireConditional:if self.globalTeamTags(includes="养分回收I") and not self.globalTeamTags(includes="养分回收II")
+isVisible:if self.globalTeamTags(includes="养分回收I") and not self.globalTeamTags(includes="养分回收II")
+[action_养分回收II]
+autoTriggerOnEvent:destroyed
+text:养分回收II
+description:死亡时回收${int(core.price*0.30)}资金
+isAlsoViewableByAllies:true
+isAlsoViewableByEnemies:true
+pos:999
+isActive:false
+displayType:infoOnlyNoBox
+addResources:${int(core.price*0.30)}
+requireConditional:if self.globalTeamTags(includes="养分回收II") and not self.globalTeamTags(includes="养分回收III")
+isVisible:if self.globalTeamTags(includes="养分回收II") and not self.globalTeamTags(includes="养分回收III")
+[action_养分回收III]
+autoTriggerOnEvent:destroyed
+text:养分回收III
+description:死亡时回收${int(core.price*0.45)}资金
+isAlsoViewableByAllies:true
+isAlsoViewableByEnemies:true
+pos:999
+isActive:false
+displayType:infoOnlyNoBox
+addResources:${int(core.price*0.45)}
+requireConditional:if self.globalTeamTags(includes="养分回收III")
+isVisible:if self.globalTeamTags(includes="养分回收III")

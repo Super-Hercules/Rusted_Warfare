@@ -1,0 +1,11 @@
+[core]
+dont_load: true
+
+[hiddenAction_后撤]
+autoTrigger: if self.isAttacking and distanceBetween(self, attacking)<=${attack.maxAttackRange} and self.isControlledByAi and not self.isEnergyFull
+addWaypoint_type: move
+addWaypoint_target_fromReference: createMarker(x=self.x, y=self.y, dir=direction(self.x, self.y, attacking.x, attacking.y)).getOffsetRelative(y=-100)
+addWaypoint_maxTime: 1s
+addWaypoint_target_mapMustBeReachable: true
+addWaypoint_prepend: true
+allowMultipleInQueue: false

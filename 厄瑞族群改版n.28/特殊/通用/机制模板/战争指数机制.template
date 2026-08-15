@@ -1,0 +1,30 @@
+[core]
+dont_load: true
+
+[graphics]
+image: ROOT:/特殊/通用/空白.png
+scaleImagesTo: 0
+[hiddenAction_战争指数T1]
+autoTriggerOnEvent: destroyed
+requireConditional: if not self.globalTeamTags(includes="基因T2")
+addResources: 战争指数=${core.price / 1500}
+[hiddenAction_战争指数T2]
+autoTriggerOnEvent: destroyed
+requireConditional: if self.globalTeamTags(includes="基因T2") and not self.globalTeamTags(includes="基因T3")
+addResources: 战争指数=${core.price / 6000}
+[hiddenAction_战争指数T3]
+autoTriggerOnEvent: destroyed
+requireConditional: if self.globalTeamTags(includes="基因T3") and not self.globalTeamTags(includes="基因T4")
+addResources: 战争指数=${core.price / 12000}
+[hiddenAction_战争指数T4]
+autoTriggerOnEvent: destroyed
+requireConditional: if self.globalTeamTags(includes="基因T4") and not self.globalTeamTags(includes="基因T5")
+addResources: 战争指数=${core.price / 20000}
+[hiddenAction_战争指数T5]
+autoTriggerOnEvent: destroyed
+requireConditional: if self.globalTeamTags(includes="基因T5")
+addResources: 战争指数=${core.price / 100000}
+[attack]
+canAttack: false
+[movement]
+movementType: NONE
