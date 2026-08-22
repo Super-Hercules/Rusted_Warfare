@@ -1,0 +1,18 @@
+[core]
+strictLevel:0
+numBitsOnDeath:0
+hideScorchMark:true
+ignoreInUnitCapCalculation:true
+nukeOnDeathDisableWhenNoNuke:false
+autoTriggerCooldownTime_allowDangerousHighCPU:true
+autoTriggerCheckRate:every8Frames
+autoTriggerCooldownTime:0.1s
+[hiddenAction_战争指数增加]
+autoTriggerOnEvent:destroyed
+addResources:战争指数=${core.price / 1000}
+[global_resource_战争指数]
+hidden:false
+displayName:战争指数
+displayNameShort:战争指数
+displayColor:#FF0000
+priority:1
