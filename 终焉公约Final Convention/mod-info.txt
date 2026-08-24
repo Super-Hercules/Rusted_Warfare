@@ -1,0 +1,8 @@
+[mod]
+thumbnail: icon.png
+title: 终湮公约Final Convention v0.2
+description: \n- 贴图制作与优化：奥托, SYMR 叶淼染, 狐, 二代木子李\n- 代码制作与优化：甚好, SYMR 叶淼染\n- 平衡调整: 奥托\n- 特别鸣谢：\n- Daniel_Calan（提供了mod“Expedition”的贴图）\n- yeah（提供了mod“星界”部分单位的贴图）\n- 贰零拾月（提供了mod“厄瑞族群”部分单位的贴图）\n- SYMR 叶淼染（提供了mod“浸没技术”部分单位的贴图）\n- 广大公素制作者\n- 最小版本需求：1.15p11
+minVersion: v1.15p11
+[music]
+sourceFolder: /music
+whenUsingUnitsFromThisMod_playExclusively: true

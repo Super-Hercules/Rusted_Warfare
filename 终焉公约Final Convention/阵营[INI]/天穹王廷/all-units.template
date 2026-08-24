@@ -1,0 +1,5 @@
+[core]
+copyFrom: ROOT:/all-units.template
+
+
+selfRegenRate: ${core.maxHp * 0.00033}
